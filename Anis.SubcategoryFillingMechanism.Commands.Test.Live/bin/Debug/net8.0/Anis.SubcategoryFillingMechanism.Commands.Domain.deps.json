@@ -1,0 +1,28 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Anis.SubcategoryFillingMechanism.Commands.Domain/1.0.0": {
+        "runtime": {
+          "Anis.SubcategoryFillingMechanism.Commands.Domain.dll": {}
+        },
+        "resources": {
+          "en/Anis.SubcategoryFillingMechanism.Commands.Domain.resources.dll": {
+            "locale": "en"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Anis.SubcategoryFillingMechanism.Commands.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

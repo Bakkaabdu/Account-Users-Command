@@ -1,0 +1,70 @@
+name: Deploy To Production
+on:
+  release:
+    types: [ "published" ]
+  workflow_dispatch:
+env:
+    SERVICE_NAME: anis-subcategory-filling-mechanism-commands
+    SERVICE_NAMESPACE: anis-subcategory-filling-mechanism
+permissions:
+    actions: read
+    contents: read
+    id-token: write
+jobs:
+  build-service-image:
+    runs-on: self-hosted
+    environment: production
+    steps:
+      - name: "Checkout Code"
+        uses: actions/checkout@v3
+      - name: "Looking For Check Docker & Deployment File"
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "Dockerfile, production-manifest.yaml"
+          allow_failure: true
+      - name: Azure login
+        uses: azure/login@v1.4.3
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Build and push image to ACR
+        run: az acr build --image ${{ env.SERVICE_NAME }}:${{ github.sha }} --registry ecomly -g Core -f ./Dockerfile ./
+  
+  deploy-to-production:
+    runs-on: self-hosted
+    environment: production
+    needs:
+      - build-service-image
+    steps:
+      - name: "Checkout Code"
+        uses: actions/checkout@v3
+      - uses: cschleiden/replace-tokens@v1
+        with:
+          files: '["production-manifest.yaml"]'
+          tokenPrefix: ___
+          tokenSuffix: ___
+        env:
+          SERVICE_NAME: ${{ env.SERVICE_NAME }}
+          SERVICE_NAMESPACE: ${{ env.SERVICE_NAMESPACE }}
+          CONTAINER_REGISTRY: ecomly
+          IMAGE_TAG: ${{ github.sha }}
+          CONNECTION_STRING: ${{ secrets.DATABASE_CONNECTION_STRING }}
+          SERVICE_BUS_CONNECTION_STRING: ${{ secrets.SERVICE_BUS_CONNECTION_STRING }}
+          
+      - name: Azure login
+        uses: azure/login@v1.4.3
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - uses: Azure/aks-set-context@v3
+        with:
+          cluster-name: anis-primary
+          resource-group: ${{ secrets.CLUSTER_RESOURCE_GROUP }}
+      - uses: Azure/k8s-deploy@v4
+        name: Deploys application
+        with:
+          action: deploy
+          images: ecomly.azurecr.io/${{ env.SERVICE_NAME }}:${{ github.sha }}
+          manifests: |
+            production-manifest.yaml
+          namespace: ${{ env.SERVICE_NAMESPACE }}
+     

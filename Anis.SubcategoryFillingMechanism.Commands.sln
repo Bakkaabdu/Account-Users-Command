@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anis.SubcategoryFillingMechanism.Commands.Grpc", "Anis.SubcategoryFillingMechanism.Commands.Grpc\Anis.SubcategoryFillingMechanism.Commands.Grpc.csproj", "{37E63E2D-F1F2-4E96-ADF7-84D562C5F796}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6C331FEE-1A03-4CA0-96E2-03F5AAA8FEB9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anis.SubcategoryFillingMechanism.Commands.Test", "Anis.SubcategoryFillingMechanism.Commands.Test\Anis.SubcategoryFillingMechanism.Commands.Test.csproj", "{2DD56DE0-1AF2-4CA6-B1A0-12789E043007}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anis.SubcategoryFillingMechanism.Commands.Test.Live", "Anis.SubcategoryFillingMechanism.Commands.Test.Live\Anis.SubcategoryFillingMechanism.Commands.Test.Live.csproj", "{24DA9DCD-0426-401B-A87C-600C7C96DE61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anis.SubcategoryFillingMechanism.Commands.Application", "Anis.SubcategoryFillingMechanism.Commands.Application\Anis.SubcategoryFillingMechanism.Commands.Application.csproj", "{3E424263-E30D-42E7-B9E5-4766F6FD0510}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anis.SubcategoryFillingMechanism.Commands.Domain", "Anis.SubcategoryFillingMechanism.Commands.Domain\Anis.SubcategoryFillingMechanism.Commands.Domain.csproj", "{E35B95DF-33B4-4818-8874-DB0EDB49270C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anis.SubcategoryFillingMechanism.Commands.Infra", "Anis.SubcategoryFillingMechanism.Commands.Infra\Anis.SubcategoryFillingMechanism.Commands.Infra.csproj", "{1726CDDE-1F0B-45C3-B9A3-0E800B1150F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6DDE5C61-F66D-4157-A872-2AF7C7CFF053}"
+	ProjectSection(SolutionItems) = preProject
+		development-manifest.yaml = development-manifest.yaml
+		Dockerfile = Dockerfile
+		production-manifest.yaml = production-manifest.yaml
+		staging-manifest.yaml = staging-manifest.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37E63E2D-F1F2-4E96-ADF7-84D562C5F796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37E63E2D-F1F2-4E96-ADF7-84D562C5F796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37E63E2D-F1F2-4E96-ADF7-84D562C5F796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37E63E2D-F1F2-4E96-ADF7-84D562C5F796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD56DE0-1AF2-4CA6-B1A0-12789E043007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD56DE0-1AF2-4CA6-B1A0-12789E043007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD56DE0-1AF2-4CA6-B1A0-12789E043007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD56DE0-1AF2-4CA6-B1A0-12789E043007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24DA9DCD-0426-401B-A87C-600C7C96DE61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DA9DCD-0426-401B-A87C-600C7C96DE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24DA9DCD-0426-401B-A87C-600C7C96DE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24DA9DCD-0426-401B-A87C-600C7C96DE61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E424263-E30D-42E7-B9E5-4766F6FD0510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E424263-E30D-42E7-B9E5-4766F6FD0510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E424263-E30D-42E7-B9E5-4766F6FD0510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E424263-E30D-42E7-B9E5-4766F6FD0510}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35B95DF-33B4-4818-8874-DB0EDB49270C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35B95DF-33B4-4818-8874-DB0EDB49270C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35B95DF-33B4-4818-8874-DB0EDB49270C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35B95DF-33B4-4818-8874-DB0EDB49270C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1726CDDE-1F0B-45C3-B9A3-0E800B1150F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1726CDDE-1F0B-45C3-B9A3-0E800B1150F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1726CDDE-1F0B-45C3-B9A3-0E800B1150F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1726CDDE-1F0B-45C3-B9A3-0E800B1150F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2DD56DE0-1AF2-4CA6-B1A0-12789E043007} = {6C331FEE-1A03-4CA0-96E2-03F5AAA8FEB9}
+		{24DA9DCD-0426-401B-A87C-600C7C96DE61} = {6C331FEE-1A03-4CA0-96E2-03F5AAA8FEB9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1406D1FA-674F-4D62-A064-9B50D6099177}
+	EndGlobalSection
+EndGlobal

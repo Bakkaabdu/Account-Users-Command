@@ -1,0 +1,3 @@
+obj\Debug\net8.0\Protos/AnisSubcategoryFillingMechanismEventsHistory.cs \
+obj\Debug\net8.0\Protos/AnisSubcategoryFillingMechanismEventsHistoryGrpc.cs: C:/Users/msi/.nuget/packages/grpc.tools/2.62.0/build/native/include/google/protobuf/timestamp.proto\
+ Protos/anis_subcategory_filling_mechanism_events_history.proto

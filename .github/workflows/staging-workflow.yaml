@@ -1,0 +1,73 @@
+name: Deploy To Staging
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+env:
+    SERVICE_NAME: anis-subcategory-filling-mechanism-commands
+    SERVICE_NAMESPACE: anis-subcategory-filling-mechanism 
+permissions:
+    actions: read
+    contents: read
+    id-token: write    
+jobs:
+  build-service-image:
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - name: "Checkout Code"
+        uses: actions/checkout@v3
+      - name: "Looking For Check Docker & Deployment File"
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "Dockerfile, staging-manifest.yaml"
+          allow_failure: true
+      - name: Azure login
+        uses: azure/login@v1.4.3
+        with:
+          client-id: ${{ secrets.AZURE_USER_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+      - name: Build and push image to ACR
+        run: az acr build --image ${{ env.SERVICE_NAME }}:${{ github.sha }} --registry anisstaging -g container-registries -f ./Dockerfile ./
+      
+  deploy-to-staging:
+    runs-on: ubuntu-latest
+    environment: staging
+    needs:
+      - build-service-image
+    steps:
+      - name: "Checkout Code"
+        uses: actions/checkout@v3
+      - uses: cschleiden/replace-tokens@v1
+        with:
+          files: '["staging-manifest.yaml"]'
+          tokenPrefix: ___
+          tokenSuffix: ___
+        env:
+          SERVICE_NAME: ${{ env.SERVICE_NAME }}
+          SERVICE_NAMESPACE: ${{ env.SERVICE_NAMESPACE }}
+          CONTAINER_REGISTRY: anisstaging
+          IMAGE_TAG: ${{ github.sha }}
+          CONNECTION_STRING: ${{ secrets.STAGING_DATABASE_CONNECTION_STRING }}
+          SERVICE_BUS_CONNECTION_STRING: ${{ secrets.ANIS_STAGING_SERVICE_BUS_CONNECTION_STRING }}
+
+      - name: Azure login
+        uses: azure/login@v1.4.3
+        with:
+          client-id: ${{ secrets.AZURE_USER_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+      - uses: Azure/aks-set-context@v3
+        with:
+          cluster-name: anis-staging
+          resource-group: ${{ secrets.CLUSTER_RESOURCE_GROUP }}
+      - uses: Azure/k8s-deploy@v4
+        name: Deploys application
+        with:
+          action: deploy
+          images: anisstaging.azurecr.io/${{ env.SERVICE_NAME }}:${{ github.sha }}
+          manifests: |
+            staging-manifest.yaml
+          namespace: ${{ env.SERVICE_NAMESPACE }}

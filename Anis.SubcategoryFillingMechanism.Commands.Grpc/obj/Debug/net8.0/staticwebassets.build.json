@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ksnmvFexiplERup8um6W29vJ2W0/2YUzIB3rhpY6V1c=",
+  "Source": "Anis.SubcategoryFillingMechanism.Commands.Grpc",
+  "BasePath": "_content/Anis.SubcategoryFillingMechanism.Commands.Grpc",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

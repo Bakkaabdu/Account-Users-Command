@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Anis.SubcategoryFillingMechanism.Commands.Grpc.props" />
+</Project>

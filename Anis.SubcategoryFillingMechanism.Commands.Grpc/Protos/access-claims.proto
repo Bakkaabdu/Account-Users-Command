@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package anis.gateway.v1;
+
+import "google/protobuf/wrappers.proto";
+
+option csharp_namespace = "Anis.SubcategoryFillingMechanism.Commands.Grpc.Protos";
+
+message AccessClaims {
+	UserData user = 1;
+	AccountData account = 2;
+	WalletData wallet = 3;
+}
+
+message UserData {
+	string id = 1;
+	google.protobuf.StringValue scop_id = 2;
+	UserRole role = 3;
+	repeated UserPermission permissions = 4;
+}
+
+message AccountData {
+	string id = 1;
+	string subscription_id = 2;
+	SubscriptionType subscription_type = 3;
+	string location_id = 4;
+}
+
+message WalletData {
+	string id = 1;
+	string region_id = 2;
+}
+
+enum UserPermission {
+	NONE = 0;
+	PURCHASE_CARDS = 1;
+	ALL_MY_CARDS = 2;
+	MONEY_TRANSACTIONS = 3;
+	ALL_ACCOUNT_STATEMENTS = 4;
+	COMPLAINTS = 5;
+	RESTRICTED_TO_OWNER_ONLY = 6;
+	CHANGE_PRICE = 7;
+	SHOW_COST = 8;
+}
+
+enum UserRole {
+	Owner = 0;
+	Admin = 1;
+	Member = 2;
+}
+
+enum SubscriptionType {
+	TREASURY = 0;
+	BUSINESS = 1;
+	PERSONAL = 2;
+}

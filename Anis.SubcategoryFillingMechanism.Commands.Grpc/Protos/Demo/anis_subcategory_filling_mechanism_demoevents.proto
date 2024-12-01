@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+option csharp_namespace = "Anis.SubcategoryFillingMechanism.Commands.Grpc.Protos";
+
+package anis.subcategory_filling_mechanism.commands;
+
+
+import "google/protobuf/wrappers.proto";
+
+import "google/protobuf/empty.proto";
+
+service SubcategoryFillingMechanismDemoEvents {
+	
+  rpc AddSubcategoryFillingMechanism (AddSubcategoryFillingMechanismRequest) returns (google.protobuf.Empty);
+  rpc UpdateSubcategoryFillingMechanism (UpdateSubcategoryFillingMechanismRequest) returns (google.protobuf.Empty);
+  rpc UpdateSubcategoryFillingMechanismVideo (UpdateSubcategoryFillingMechanismVideoRequest) returns (google.protobuf.Empty);
+  rpc DeleteSubcategoryFillingMechanismVideo (DeleteSubcategoryFillingMechanismVideoRequest) returns (google.protobuf.Empty);
+}
+
+message AddSubcategoryFillingMechanismRequest {
+  string subcategory_id = 1;
+  string user_id = 2;
+  string subcategory_info = 3;
+  string filling_mechanism = 4;
+  google.protobuf.StringValue filling_mechanism_video_url = 5;
+  int32 sequence = 6;
+}
+
+
+message UpdateSubcategoryFillingMechanismRequest {
+  string subcategory_id = 1;
+  string user_id = 2;
+  string subcategory_info = 3;
+  string filling_mechanism = 4;
+  int32 sequence = 5;
+}
+
+
+message UpdateSubcategoryFillingMechanismVideoRequest {
+  string subcategory_id = 1;
+  string user_id = 2;
+  string filling_mechanism_video_url = 3;
+  int32 sequence = 4;
+}
+
+
+message DeleteSubcategoryFillingMechanismVideoRequest {
+  string subcategory_id = 1;
+  string user_id = 2;
+  int32 sequence = 3;
+}

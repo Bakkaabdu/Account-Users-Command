@@ -1,0 +1,2 @@
+obj\Debug\net8.0\Protos/AccessClaims.cs: C:/Users/msi/.nuget/packages/grpc.tools/2.62.0/build/native/include/google/protobuf/wrappers.proto\
+ Protos/access-claims.proto

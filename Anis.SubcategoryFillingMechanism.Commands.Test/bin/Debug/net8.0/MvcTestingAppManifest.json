@@ -1,0 +1,6 @@
+{
+  "Anis.SubcategoryFillingMechanism.Commands.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\files\\ANIS\\anis.subcategory-filling-mechanism-commands\\Anis.SubcategoryFillingMechanism.Commands.Application",
+  "Anis.SubcategoryFillingMechanism.Commands.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\files\\ANIS\\anis.subcategory-filling-mechanism-commands\\Anis.SubcategoryFillingMechanism.Commands.Domain",
+  "Anis.SubcategoryFillingMechanism.Commands.Grpc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\files\\ANIS\\anis.subcategory-filling-mechanism-commands\\Anis.SubcategoryFillingMechanism.Commands.Grpc",
+  "Anis.SubcategoryFillingMechanism.Commands.Infra, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\files\\ANIS\\anis.subcategory-filling-mechanism-commands\\Anis.SubcategoryFillingMechanism.Commands.Infra"
+}

@@ -1,0 +1,4 @@
+obj\Debug\net8.0\Protos\Demo/AnisSubcategoryFillingMechanismDemoevents.cs \
+obj\Debug\net8.0\Protos\Demo/AnisSubcategoryFillingMechanismDemoeventsGrpc.cs: C:/Users/msi/.nuget/packages/grpc.tools/2.62.0/build/native/include/google/protobuf/wrappers.proto\
+ C:/Users/msi/.nuget/packages/grpc.tools/2.62.0/build/native/include/google/protobuf/empty.proto\
+ Protos/Demo/anis_subcategory_filling_mechanism_demoevents.proto

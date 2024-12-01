@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>b5f13ed1-4aab-4ee1-95a3-e37972b39ee0</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Protos\access-claims.proto" />
+    <None Remove="Protos\anis_manage_users_commands.proto" />
+    <None Remove="Protos\anis_subcategory_filling_mechanism_events_history.proto" />
+    <None Remove="Protos\Demo\anis_subcategory_filling_mechanism_demoevents.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\access-claims.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\anis_manage_users_commands.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\anis_subcategory_filling_mechanism_commands.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\anis_subcategory_filling_mechanism_events_history.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\Demo\anis_subcategory_filling_mechanism_demoevents.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Calzolari.Grpc.AspNetCore.Validation" Version="8.0.0" />
+		<PackageReference Include="Grpc.AspNetCore" Version="2.62.0" />
+		<PackageReference Include="MediatR" Version="12.4.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Anis.SubcategoryFillingMechanism.Commands.Infra\Anis.SubcategoryFillingMechanism.Commands.Infra.csproj" />
+	</ItemGroup>
+
+
+</Project>

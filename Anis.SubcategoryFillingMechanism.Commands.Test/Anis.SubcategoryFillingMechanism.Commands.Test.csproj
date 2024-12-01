@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Protos\anis_manage_users_commands.proto" />
+    <None Remove="Protos\anis_subcategory_filling_mechanism_commands.proto" />
+  </ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Bogus" Version="35.5.0" />
+		<PackageReference Include="Calzolari.Grpc.Net.Client.Validation" Version="8.0.0" />
+		<PackageReference Include="coverlet.collector" Version="6.0.0" />
+		<PackageReference Include="Grpc.Net.ClientFactory" Version="2.62.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.62.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.3" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.3" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+		<PackageReference Include="Serilog.Sinks.XUnit" Version="3.0.5" />
+		<PackageReference Include="xunit" Version="2.5.3" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\Anis.SubcategoryFillingMechanism.Commands.Grpc\Anis.SubcategoryFillingMechanism.Commands.Grpc.csproj" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\anis_manage_users_commands.proto">
+      <GrpcServices>Client</GrpcServices>
+    </Protobuf>
+    <Protobuf Include="Protos\anis_subcategory_filling_mechanism_commands.proto" GrpcServices="Client" />
+  </ItemGroup>
+
+</Project>

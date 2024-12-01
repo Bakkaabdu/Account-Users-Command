@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "Anis.SubcategoryFillingMechanism.Commands.Grpc.Protos";
+
+package manage_users_commands;
+
+service ManageUsersCommand {
+	rpc AssignUser (AssignUserRequest) returns (Response);
+	rpc UnAssignUser (UnAssignUserRequest) returns (Response);
+}
+
+message AssignUserRequest{
+	string accountId = 1;
+	string userId = 2;
+}
+message UnAssignUserRequest{
+	string accountId = 1;
+	string userId = 2;
+}
+
+message Response {
+	string message = 1;
+}

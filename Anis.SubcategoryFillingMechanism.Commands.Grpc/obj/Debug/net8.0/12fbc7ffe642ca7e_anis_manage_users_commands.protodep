@@ -1,0 +1,2 @@
+obj\Debug\net8.0\Protos/AnisManageUsersCommands.cs \
+obj\Debug\net8.0\Protos/AnisManageUsersCommandsGrpc.cs: Protos/anis_manage_users_commands.proto

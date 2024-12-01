@@ -1,0 +1,17 @@
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\bin\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.deps.json
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\bin\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.dll
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\bin\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.pdb
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\bin\Debug\net8.0\en\Anis.SubcategoryFillingMechanism.Commands.Domain.resources.dll
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.Resources.Phrases.resources
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.Resources.Phrases.en.resources
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.csproj.GenerateResource.cache
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.AssemblyInfoInputs.cache
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.AssemblyInfo.cs
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.csproj.CoreCompileInputs.cache
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.sourcelink.json
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\en\Anis.SubcategoryFillingMechanism.Commands.Domain.resources.dll
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.dll
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\refint\Anis.SubcategoryFillingMechanism.Commands.Domain.dll
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\Anis.SubcategoryFillingMechanism.Commands.Domain.pdb
+C:\files\ANIS\anis.subcategory-filling-mechanism-commands\Anis.SubcategoryFillingMechanism.Commands.Domain\obj\Debug\net8.0\ref\Anis.SubcategoryFillingMechanism.Commands.Domain.dll

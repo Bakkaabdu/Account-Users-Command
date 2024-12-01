@@ -1,0 +1,90 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ___SERVICE_NAMESPACE___
+  labels:
+    name: ___SERVICE_NAMESPACE___
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ___SERVICE_NAME___
+  namespace: ___SERVICE_NAMESPACE___
+data:
+  DatabaseConnectionString: ___CONNECTION_STRING___
+  ServiceBusConnectionString: ___SERVICE_BUS_CONNECTION_STRING___  
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ___SERVICE_NAME___
+  namespace: ___SERVICE_NAMESPACE___
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: ___SERVICE_NAME___
+  template:
+    metadata:
+      labels:
+        app: ___SERVICE_NAME___
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+      - name: ___SERVICE_NAME___
+        image: ___CONTAINER_REGISTRY___.azurecr.io/___SERVICE_NAME___:___IMAGE_TAG___
+        ports:
+        - containerPort: 8080
+        env:
+
+        ## Environment
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
+
+        ##Connection Strings
+        - name : ConnectionStrings__Database
+          valueFrom: 
+            secretKeyRef:
+              name: ___SERVICE_NAME___
+              key: DatabaseConnectionString
+
+        - name : ConnectionStrings__ServiceBus
+          valueFrom: 
+            secretKeyRef:
+              name: ___SERVICE_NAME___
+              key: ServiceBusConnectionString
+                  
+        ##ServiceBusTopicsAndSubscription
+
+        - name: ServiceBus__Topic
+          value: "anis-subcategory-filling-mechanism-commands"
+
+        ## Serilog
+        - name: Serilog__SeqUrl
+          value: "http://seq.logger"
+
+        - name: Serilog__AppName
+          value: "___SERVICE_NAME___"
+
+        - name: Serilog__AppNamespace
+          value: "___SERVICE_NAMESPACE___"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ___SERVICE_NAME___
+  namespace: ___SERVICE_NAMESPACE___
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: ___SERVICE_NAME___
+---
